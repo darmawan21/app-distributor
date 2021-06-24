@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Lexa - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>@yield('title')</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -80,52 +80,13 @@
             </div>
             <!-- Top Bar End -->
 
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="left side-menu">
-                <div class="slimscroll-menu" id="remove-scroll">
-
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
-                        <!-- Left Menu Start -->
-                        <ul class="metismenu" id="side-menu">
-                            <li class="menu-title">Utama</li>
-                            <li>
-                                <a href="index.html" class="waves-effect active">
-                                    <i class="mdi mdi-view-dashboard"></i><span> Dashboard </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="barang.html" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Barang </span></a>
-                            </li>
-                            <li>
-                                <a href="penjualan.html" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Penjualan </span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Pembelian </span></a>
-                            </li>
-                            <li>
-                                <a href="operasional.html" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Operasional </span></a>
-                            </li>
-
-                            <li class="menu-title">Laporan</>
-
-                            <li>
-                                <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Laporan Bulanan </span></a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                    <!-- Sidebar -->
-                    <div class="clearfix"></div>
-
-                </div>
-                <!-- Sidebar -left -->
-
-            </div>
-            <!-- Left Sidebar End -->
+            @yield('sidebar')
 
             @yield('content')
+
+            <footer class="footer">
+                © 2018 - 2019 Lexa - <span class="d-none d-sm-inline-block"> Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</span>.
+            </footer>
 
         </div>
         <!-- END wrapper -->

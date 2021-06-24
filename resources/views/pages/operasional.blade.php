@@ -1,6 +1,6 @@
 @extends('layouts.header')
 
-@section('title', 'Dashboard')
+@section('title', 'Operasional')
 
 @section('sidebar')
 
@@ -13,7 +13,7 @@
             <ul class="metismenu" id="side-menu">
                 <li class="menu-title">Utama</li>
                 <li>
-                    <a href="/dashboard" class="waves-effect active">
+                    <a href="/dashboard" class="waves-effect">
                         <i class="mdi mdi-view-dashboard"></i><span> Dashboard </span>
                     </a>
                 </li>
@@ -27,7 +27,7 @@
                     <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Pembelian </span></a>
                 </li>
                 <li>
-                    <a href="/operasional" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Operasional </span></a>
+                    <a href="/operasional" class="waves-effect active"><i class="mdi mdi-calendar-check"></i><span> Operasional </span></a>
                 </li>
 
                 <li class="menu-title">Laporan</>
@@ -46,7 +46,6 @@
     <!-- Sidebar -left -->
 
 </div>
-<!-- Left Sidebar End -->
 @endsection
 
 @section('content')
@@ -69,6 +68,43 @@
                 </div>
             </div>
             <!-- end row -->
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card m-b-20">
+                        <div class="card-body">
+
+                            <h4 class="mt-0 header-title">Default Datatable</h4>
+                            <p class="text-muted m-b-30">DataTables has most features enabled by
+                                default, so all you need to do to use it with your own tables is to call
+                                the construction function: <code>$().DataTable();</code>.
+                            </p>
+
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                <tr>
+                                    <th>Keterangan</th>
+                                    <th>Biaya</th>
+                                    <th>Tanggal</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+
+
+                                <tbody>
+                                <tr>
+                                    <td>Print Anggrek Mas 10KG</td>
+                                    <td>Semi Transparan</td>
+                                    <td>35 x 55 cm</td>
+                                    <td>750D 10 x 30</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
 
         </div> <!-- container-fluid -->
 
