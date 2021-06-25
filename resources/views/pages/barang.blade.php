@@ -78,7 +78,7 @@
                             <p class="text-muted m-b-30">
                                 Update terakhir pada tanggal 13/02/2021
                                 <div class="button-items">
-                                    <a href="barang-tambah.html">
+                                    <a href="/barang/tambah-barang">
                                         <button type="button" class="btn btn-secondary waves-effect">+ Tambah</button>
                                     </a>
                                     <a href="#">

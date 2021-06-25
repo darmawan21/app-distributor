@@ -46,6 +46,7 @@
     <!-- Sidebar -left -->
 
 </div>
+
 @endsection
 
 @section('content')
