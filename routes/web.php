@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\OperasionalController;
 use App\Http\Controllers\BarangTambahController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,11 @@ use App\Http\Controllers\BarangTambahController;
 
 Route::get('/dashboard', [DashboardController::class, 'index']); 
 
-Route::get('/barang', [BarangController::class, 'index']);
+// Route::get('/barang', [BarangController::class, 'index']);
+Route::resource('barang', BarangController::class);
 
 Route::get('/barang/tambah-barang', [BarangTambahController::class, 'index']);
+
+Route::get('/penjualan', [PenjualanController::class, 'index']);
 
 Route::get('/operasional', [OperasionalController::class, 'index']);
