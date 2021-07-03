@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Barang extends Model
 {
@@ -24,4 +25,9 @@ class Barang extends Model
     protected $hidden = [
 
     ];
+
+    // public function allData() 
+    // {
+    //     return DB::table('barang')->get();
+    // }
 }

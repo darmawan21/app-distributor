@@ -14,7 +14,7 @@ class CreateJenisPembayaranTable extends Migration
     public function up()
     {
         Schema::create('jenis_pembayaran', function (Blueprint $table) {
-            $table->id('id_jenis_pembayaran');
+            $table->id('id');
             $table->string('jenis_pembayaran');
             $table->timestamps();
         });

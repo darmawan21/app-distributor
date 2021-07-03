@@ -78,41 +78,73 @@
                             <p class="text-muted m-b-30">
                                 Update terakhir pada tanggal 13/02/2021
                                 <div class="button-items">
-                                    <a href="/barang/tambah-barang">
-                                        <button type="button" class="btn btn-secondary waves-effect">+ Tambah</button>
-                                    </a>
-                                    <a href="#">
-                                        <button type="button" class="btn btn-secondary waves-effect">Edit</button>
+                                    <a href="{{ route('barang.create') }}">
+                                        <button type="button" class="btn btn-primary waves-effect">+ Tambah</button>
                                     </a>
                                 </div>
                             </p>
                             
                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
-                                <tr>
-                                    <th>Keterangan</th>
-                                    <th>Nama Barang</th>
-                                    <th>Ukuran</th>
-                                    <th>Spesifikasi</th>
-                                    <th>Jumlah (BAL)</th>
-                                    <th>Jumlah (LBR)</th>
-                                    <th>Jumlah Total</th>
-                                </tr>
+                                    <tr>
+                                        <th>Keterangan</th>
+                                        <th>Nama Barang</th>
+                                        <th>Ukuran</th>
+                                        <th>Spesifikasi</th>
+                                        <th>Jumlah (BAL)</th>
+                                        <th>Jumlah (LBR)</th>
+                                        <th>Jumlah Total</th>
+                                        <th>Action</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($barangs as $item)
-                                        <tr>
-                                            <td>{{ $item->keterangan }}</td>
-                                            <td>{{ $item->nama_barang }}</td>
-                                            <td>{{ $item->ukuran }}</td>
-                                            <td>{{ $item->spesifikasi }}</td>
-                                            <td>{{ $item->jumlah_bal }}</td>
-                                            <td>{{ $item->jumlah_lbr }}</td>
-                                            <td>{{ $item->jumlah_total }}</td>
-                                        </tr>
+                                    @forelse ($barangs as $barang)
+                                    <tr>
+                                        <td>{{ $barang->keterangan }}</td>
+                                        <td>{{ $barang->nama_barang }}</td>
+                                        <td>{{ $barang->ukuran }}</td>
+                                        <td>{{ $barang->spesifikasi }}</td>
+                                        <td>{{ $barang->jumlah_bal }}</td>
+                                        <td>{{ $barang->jumlah_lbr }}</td>
+                                        <td>{{ $barang->jumlah_total }}</td>
+                                        <td>
+                                            <div class="button-items">
+                                                <div class="text-left">
+                                                    <a class="btn btn-warning waves-effect" href="{{ route('barang.edit', $barang->id) }}">Edit</a> 
+                                                    <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#delete">Hapus</button>
+                                                </div>
+                                            </div>
+
+                                            <form  method="post" action="{{ route('barang.destroy', $barang->id) }}">
+
+                                            @csrf
+                
+                                            @method('DELETE')
+                
+                                                {{-- Modal --}}
+                                                <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="delete">
+                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title mt-0">DELETE</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>Apakah Yakin Menghapus Data Ini ?</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>   
+                                                            </div>                                           
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+                                            </form>
+                                        </td>
+                                    </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="7" class="text-center  ">
+                                            <td colspan="7" class="text-center">
                                                 Data Kosong
                                             </td>
                                         </tr>
@@ -120,6 +152,8 @@
                                 </tbody>
                             </table>
 
+                            
+                            
                         </div>
                     </div>
                 </div> <!-- end col -->

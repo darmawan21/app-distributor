@@ -14,7 +14,7 @@ class CreateOperasionalTable extends Migration
     public function up()
     {
         Schema::create('operasional', function (Blueprint $table) {
-            $table->id('id_operasional');
+            $table->id('id');
             $table->integer('id_pengguna');
             $table->string('keterangan');
             $table->integer('biaya');

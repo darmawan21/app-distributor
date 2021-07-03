@@ -97,7 +97,38 @@
                                     <td>Print Anggrek Mas 10KG</td>
                                     <td>Semi Transparan</td>
                                     <td>35 x 55 cm</td>
-                                    <td>750D 10 x 30</td>
+                                    <td>
+                                        <div class="button-items">
+                                            <div class="text-left">
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-warning waves-effect">Edit</button>
+                                                </a>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-center">Hapus</button>
+                                                </a>
+                                            </div>
+
+                                            {{-- Modal --}}
+                                            <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title mt-0">Center modal</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>One fine body&hellip;</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger">Hapus</button>
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                                                        </div>
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal-dialog -->
+                                            </div><!-- /.modal -->
+
+                                        </div>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

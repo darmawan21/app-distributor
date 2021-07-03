@@ -89,13 +89,15 @@
                                 </div>
                             @endif
 
-                            <form  method="post" action="{{ route('barang.store') }}">
+                            <form  method="post" action="{{ route('barang.update', $barang->id) }}">
                                 
                                 @csrf
 
+                                @method('PUT')
+
                                 <div class="form-group">
                                     <label for="keterangan">Keterangan</label>
-                                    <input type="text" name="keterangan" id="keterangan" class="form-control @error('keterangan') is-invalid @enderror" required placeholder="Type something"/>
+                                    <input type="text" name="keterangan" id="keterangan" class="form-control @error('keterangan') is-invalid @enderror" required placeholder="Type something" value="{{ $barang->keterangan }}"/>
                                     <div class="invalid-feedback">
                                         @error('keterangan')
                                             {{ $message }}
@@ -105,17 +107,17 @@
 
                                 <div class="form-group">
                                     <label for="nama_barang">Nama Barang</label>
-                                    <input type="text" name="nama_barang" id="nama_barang" class="form-control @error('nama_barang') is-invalid @enderror" required placeholder="Type something"/>
+                                    <input type="text" name="nama_barang" id="nama_barang" class="form-control @error('nama_barang') is-invalid @enderror" required placeholder="Type something" value="{{ $barang->nama_barang }}"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ukuran">Ukuran</label>
-                                    <input type="text" name="ukuran" id="ukuran" class="form-control @error('ukuran') is-invalid @enderror" required placeholder="Type something"/>
+                                    <input type="text" name="ukuran" id="ukuran" class="form-control @error('ukuran') is-invalid @enderror" required placeholder="Type something" value="{{ $barang->ukuran }}"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="spesifikasi">Spesifikasi</label>
-                                    <input type="text" name="spesifikasi" id="spesifikasi" class="form-control @error('spesifikasi') is-invalid @enderror" required placeholder="Type something"/>
+                                    <input type="text" name="spesifikasi" id="spesifikasi" class="form-control @error('spesifikasi') is-invalid @enderror" required placeholder="Type something" value="{{ $barang->spesifikasi }}"/>
                                 </div>
 
                                 <div class="form-group">
@@ -123,7 +125,7 @@
                                     <div>
                                         <input data-parsley-type="digits" type="text" name="jumlah_bal" id="jumlah_ba"
                                                 class="form-control @error('jumlah_bal') is-invalid @enderror" required
-                                                placeholder="Enter only numbers"/>
+                                                placeholder="Enter only numbers" value="{{ $barang->jumlah_bal }}"/>
                                     </div>
                                 </div>
 
@@ -132,7 +134,7 @@
                                     <div>
                                         <input data-parsley-type="number" type="text" name="jumlah_lbr" id="jumlah_lbr"
                                                 class="form-control @error('jumlah_lbr') is-invalid @enderror" required
-                                                placeholder="Enter only numbers"/>
+                                                placeholder="Enter only numbers" value="{{ $barang->jumlah_lbr }}"/>
                                     </div>
                                 </div>
 
@@ -141,7 +143,7 @@
                                     <div>
                                         <input data-parsley-type="number" type="text" name="jumlah_total" id="jumlah_total"
                                                 class="form-control @error('jumlah_total') is-invalid @enderror" required
-                                                placeholder="Enter only numbers"/>
+                                                placeholder="Enter only numbers" value="{{ $barang->jumlah_total }}"/>
                                     </div>
                                 </div>
 
@@ -150,7 +152,7 @@
                                         <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
                                             Submit
                                         </button>
-                                        <button type="reset" class="btn btn-secondary waves-effect">
+                                        <button type="reset" class="btn btn-secondary waves-effect" data-dismiss="modal">
                                             Cancel
                                         </button>
                                     </div>
