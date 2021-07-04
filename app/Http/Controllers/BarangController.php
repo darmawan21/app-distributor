@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BarangModel;
 
 class BarangController extends Controller
 {
-    public function index(Request $request)
+
+    public function __construct()
     {
-        return view('pages.barang');
+        $this->BarangModel = new BarangModel();
+    }
+
+    public function index()
+    {
+        $data = [
+            'barang'=> $this->BarangModel->allData(),
+        ];
+        return view('pages.barang', $data);
     }
 }
