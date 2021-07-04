@@ -18,16 +18,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/barang" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Barang </span></a>
+                    <a href="/barang" class="waves-effect"><i class="ion-android-archive"></i><span> Barang </span></a>
                 </li>
                 <li>
-                    <a href="/penjualan" class="waves-effect active"><i class="mdi mdi-calendar-check"></i><span> Penjualan </span></a>
+                    <a href="/penjualan" class="waves-effect active"><i class="mdi mdi-cart"></i><span> Penjualan </span></a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Pembelian </span></a>
+                    <a href="#" class="waves-effect"><i class="mdi mdi-cart"></i><span> Pembelian </span></a>
                 </li>
                 <li>
-                    <a href="/operasional" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Operasional </span></a>
+                    <a href="/operasional" class="waves-effect"><i class="mdi mdi-truck"></i><span> Operasional </span></a>
                 </li>
 
                 <li class="menu-title">Laporan</>
@@ -59,11 +59,10 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Penjualan</h4>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active">
-                                Welcome to Lexa Dashboard
-                            </li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Utama</a></li>
+                            <li class="breadcrumb-item active">Penjualan</li>
                         </ol>
                     </div>
                 </div>
@@ -75,18 +74,23 @@
                     <div class="card m-b-20">
                         <div class="card-body">
 
-                            <h4 class="mt-0 header-title">Default Datatable</h4>
-                            <p class="text-muted m-b-30">DataTables has most features enabled by
-                                default, so all you need to do to use it with your own tables is to call
-                                the construction function: <code>$().DataTable();</code>.
+                            <h4 class="mt-0 header-title">Transaksi Penjualan</h4>
+                            <p class="text-muted m-b-30">
+                                Update terakhir pada tanggal 13/02/2021
+                                <div class="button-items">
+                                    <a href="">
+                                        <button type="button" class="btn btn-success waves-effect">+ Tambah</button>
+                                    </a>
+                                </div>
                             </p>
 
                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                 <tr>
-                                    <th>Keterangan</th>
-                                    <th>Biaya</th>
+                                    <th>No.</th>
                                     <th>Tanggal</th>
+                                    <th>Jumlah Barang</th>
+                                    <th>Jumlah Harga</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -97,9 +101,13 @@
                                     <td>Print Anggrek Mas 10KG</td>
                                     <td>Semi Transparan</td>
                                     <td>35 x 55 cm</td>
+                                    <td>35 x 55 cm</td>
                                     <td>
                                         <div class="button-items">
                                             <div class="text-left">
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-primary waves-effect">Detail</button>
+                                                </a>
                                                 <a href="#">
                                                     <button type="button" class="btn btn-warning waves-effect">Edit</button>
                                                 </a>

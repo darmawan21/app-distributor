@@ -15,9 +15,9 @@ class CreateOperasionalTable extends Migration
     {
         Schema::create('operasional', function (Blueprint $table) {
             $table->id('id');
-            $table->integer('id_pengguna');
             $table->string('keterangan');
             $table->integer('biaya');
+            $table->date('tanggal');
             $table->timestamps();
         });
     }

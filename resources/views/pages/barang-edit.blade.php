@@ -18,16 +18,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/barang" class="waves-effect active"><i class="mdi mdi-calendar-check"></i><span> Barang </span></a>
+                    <a href="/barang" class="waves-effect active"><i class="ion-android-archive"></i><span> Barang </span></a>
                 </li>
                 <li>
-                    <a href="/penjualan" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Penjualan </span></a>
+                    <a href="/penjualan" class="waves-effect"><i class="mdi mdi-cart"></i><span> Penjualan </span></a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Pembelian </span></a>
+                    <a href="#" class="waves-effect"><i class="mdi mdi-cart"></i><span> Pembelian </span></a>
                 </li>
                 <li>
-                    <a href="/operasional" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Operasional </span></a>
+                    <a href="/operasional" class="waves-effect"><i class="mdi mdi-truck"></i><span> Operasional </span></a>
                 </li>
 
                 <li class="menu-title">Laporan</>
@@ -92,12 +92,11 @@
                             <form  method="post" action="{{ route('barang.update', $barang->id) }}">
                                 
                                 @csrf
-
                                 @method('PUT')
 
                                 <div class="form-group">
                                     <label for="keterangan">Keterangan</label>
-                                    <input type="text" name="keterangan" id="keterangan" class="form-control @error('keterangan') is-invalid @enderror" required placeholder="Type something" value="{{ $barang->keterangan }}"/>
+                                    <input type="text" name="keterangan" id="keterangan" class="form-control @error('keterangan') is-invalid @enderror" placeholder="Type something" value="{{ $barang->keterangan }}"/>
                                     <div class="invalid-feedback">
                                         @error('keterangan')
                                             {{ $message }}
@@ -107,25 +106,37 @@
 
                                 <div class="form-group">
                                     <label for="nama_barang">Nama Barang</label>
-                                    <input type="text" name="nama_barang" id="nama_barang" class="form-control @error('nama_barang') is-invalid @enderror" required placeholder="Type something" value="{{ $barang->nama_barang }}"/>
+                                    <input type="text" name="nama_barang" id="nama_barang" class="form-control @error('nama_barang') is-invalid @enderror" placeholder="Type something" value="{{ $barang->nama_barang }}"/>
+                                    @error('nama_barang')
+                                        {{ $message }}
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ukuran">Ukuran</label>
-                                    <input type="text" name="ukuran" id="ukuran" class="form-control @error('ukuran') is-invalid @enderror" required placeholder="Type something" value="{{ $barang->ukuran }}"/>
+                                    <input type="text" name="ukuran" id="ukuran" class="form-control @error('ukuran') is-invalid @enderror" placeholder="Type something" value="{{ $barang->ukuran }}"/>
+                                    @error('ukuran')
+                                        {{ $message }}
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="spesifikasi">Spesifikasi</label>
-                                    <input type="text" name="spesifikasi" id="spesifikasi" class="form-control @error('spesifikasi') is-invalid @enderror" required placeholder="Type something" value="{{ $barang->spesifikasi }}"/>
+                                    <input type="text" name="spesifikasi" id="spesifikasi" class="form-control @error('spesifikasi') is-invalid @enderror" placeholder="Type something" value="{{ $barang->spesifikasi }}"/>
+                                    @error('spesifikasi')
+                                        {{ $message }}
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="jumlah_bal">Jumlah (Bal)</label>
                                     <div>
                                         <input data-parsley-type="digits" type="text" name="jumlah_bal" id="jumlah_ba"
-                                                class="form-control @error('jumlah_bal') is-invalid @enderror" required
+                                                class="form-control @error('jumlah_bal') is-invalid @enderror" 
                                                 placeholder="Enter only numbers" value="{{ $barang->jumlah_bal }}"/>
+                                        @error('jumlah_bal')
+                                            {{ $message }}
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -133,8 +144,11 @@
                                     <label for="jumlah_lbr">Jumlah (Lbr)</label>
                                     <div>
                                         <input data-parsley-type="number" type="text" name="jumlah_lbr" id="jumlah_lbr"
-                                                class="form-control @error('jumlah_lbr') is-invalid @enderror" required
+                                                class="form-control @error('jumlah_lbr') is-invalid @enderror" 
                                                 placeholder="Enter only numbers" value="{{ $barang->jumlah_lbr }}"/>
+                                        @error('jumlah_lbr')
+                                            {{ $message }}
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -142,8 +156,11 @@
                                     <label for="jumlah_total">Jumlah (Total)</label>
                                     <div>
                                         <input data-parsley-type="number" type="text" name="jumlah_total" id="jumlah_total"
-                                                class="form-control @error('jumlah_total') is-invalid @enderror" required
+                                                class="form-control @error('jumlah_total') is-invalid @enderror" 
                                                 placeholder="Enter only numbers" value="{{ $barang->jumlah_total }}"/>
+                                        @error('jumlah_total')
+                                            {{ $message }}
+                                        @enderror
                                     </div>
                                 </div>
 

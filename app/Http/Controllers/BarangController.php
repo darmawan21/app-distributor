@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-// use App\Http\Requests\BarangTambahRequest;
 use App\Models\Barang;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Str;
 
 class BarangController extends Controller
 {

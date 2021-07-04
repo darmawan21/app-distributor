@@ -18,16 +18,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/barang" class="waves-effect active"><i class="mdi mdi-calendar-check"></i><span> Barang </span></a>
+                    <a href="/barang" class="waves-effect active"><i class="ion-android-archive"></i><span> Barang </span></a>
                 </li>
                 <li>
-                    <a href="/penjualan" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Penjualan </span></a>
+                    <a href="/penjualan" class="waves-effect"><i class="mdi mdi-cart"></i><span> Penjualan </span></a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Pembelian </span></a>
+                    <a href="#" class="waves-effect"><i class="mdi mdi-cart"></i><span> Pembelian </span></a>
                 </li>
                 <li>
-                    <a href="/operasional" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Operasional </span></a>
+                    <a href="/operasional" class="waves-effect"><i class="mdi mdi-truck"></i><span> Operasional </span></a>
                 </li>
 
                 <li class="menu-title">Laporan</>
@@ -79,7 +79,7 @@
                                 Update terakhir pada tanggal 13/02/2021
                                 <div class="button-items">
                                     <a href="{{ route('barang.create') }}">
-                                        <button type="button" class="btn btn-primary waves-effect">+ Tambah</button>
+                                        <button type="button" class="btn btn-success waves-effect">+ Tambah</button>
                                     </a>
                                 </div>
                             </p>
@@ -118,9 +118,7 @@
                                             <form  method="post" action="{{ route('barang.destroy', $barang->id) }}">
 
                                             @csrf
-                
                                             @method('DELETE')
-                
                                                 {{-- Modal --}}
                                                 <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="delete">
                                                     <div class="modal-dialog modal-dialog-centered modal-sm">
@@ -139,15 +137,17 @@
                                                         </div><!-- /.modal-content -->
                                                     </div><!-- /.modal-dialog -->
                                                 </div><!-- /.modal -->
+
                                             </form>
+
                                         </td>
                                     </tr>
                                     @empty
-                                        <tr>
-                                            <td colspan="7" class="text-center">
-                                                Data Kosong
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td colspan="8" class="text-center">
+                                            Data Kosong
+                                        </td>
+                                    </tr>
                                     @endforelse
                                 </tbody>
                             </table>

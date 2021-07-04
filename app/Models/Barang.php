@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Barang extends Model
 {
@@ -19,15 +18,10 @@ class Barang extends Model
         'spesifikasi',
         'jumlah_bal', 
         'jumlah_lbr', 
-        'jumlah_total'
+        'jumlah_total',
     ];
 
     protected $hidden = [
 
     ];
-
-    // public function allData() 
-    // {
-    //     return DB::table('barang')->get();
-    // }
 }

@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\OperasionalController;
-// use App\Http\Controllers\BarangTambahController;
 use App\Http\Controllers\PenjualanController;
 
 /*
@@ -20,10 +19,9 @@ use App\Http\Controllers\PenjualanController;
 
 Route::get('/dashboard', [DashboardController::class, 'index']); 
 
-// Route::get('/barang', [BarangController::class]);
 Route::resource('barang', BarangController::class);
 
-Route::get('/penjualan', [PenjualanController::class, 'index']);
+Route::resource('penjualan', PenjualanController::class);
 
-Route::get('/operasional', [OperasionalController::class, 'index']);
+Route::resource('operasional', OperasionalController::class);
 
