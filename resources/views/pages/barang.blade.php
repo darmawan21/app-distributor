@@ -8,37 +8,7 @@
     <div class="slimscroll-menu" id="remove-scroll">
 
         <!--- Sidemenu -->
-        <div id="sidebar-menu">
-            <!-- Left Menu Start -->
-            <ul class="metismenu" id="side-menu">
-                <li class="menu-title">Utama</li>
-                <li>
-                    <a href="/dashboard" class="waves-effect">
-                        <i class="mdi mdi-view-dashboard"></i><span> Dashboard </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/barang" class="waves-effect active"><i class="mdi mdi-calendar-check"></i><span> Barang </span></a>
-                </li>
-                <li>
-                    <a href="/penjualan" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Penjualan </span></a>
-                </li>
-                <li>
-                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Pembelian </span></a>
-                </li>
-                <li>
-                    <a href="/operasional" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Operasional </span></a>
-                </li>
-
-                <li class="menu-title">Laporan</>
-
-                <li>
-                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Laporan Bulanan </span></a>
-                </li>
-
-            </ul>
-
-        </div>
+        @include('layouts.sidebar')
         <!-- Sidebar -->
         <div class="clearfix"></div>
 
@@ -90,27 +60,34 @@
                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                 <tr>
-                                    <th>Keterangan</th>
+                                    <th>No</th>
                                     <th>Nama Barang</th>
-                                    <th>Ukuran</th>
-                                    <th>Spesifikasi</th>
-                                    <th>Jumlah (BAL)</th>
-                                    <th>Jumlah (LBR)</th>
-                                    <th>Jumlah Total</th>
+                                    <th>Kode Barang</th>
+                                    <th>Stock</th>
+                                    <th>Satuan</th>
+                                    <th>h_modal(Rp)</th>
+                                    <th>h_jual(Rp)</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
 
 
                                 <tbody>
-                                <tr>
-                                    <td>Print Anggrek Mas 10KG</td>
-                                    <td>Semi Transparan</td>
-                                    <td>35 x 55 cm</td>
-                                    <td>750D 10 x 30</td>
-                                    <td>190</td>
-                                    <td>1000</td>
-                                    <td>1900</td>
-                                </tr>
+                                    <?php $no=1; ?>
+                                    @foreach ($barang as $data)
+                                    <tr>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $data->nama_barang }}</td>
+                                        <td>{{ $data->kode_barang }}</td>
+                                        <td>{{ $data->stock }}</td>
+                                        <td>{{ $data->satuan }}</td>
+                                        <td>{{ $data->h_modal }}</td>
+                                        <td>{{ $data->h_jual }}</td>
+                                        <td>
+                                            <a href="" class="btn btn-secondary waves-effect" >Hapus</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 

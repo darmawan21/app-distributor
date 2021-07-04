@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\OperasionalController;
+use App\Http\Controllers\RegistrasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,19 @@ use App\Http\Controllers\OperasionalController;
 |
 */
 
-Route::get('/dashboard', [DashboardController::class, 'index']); 
 
-Route::get('/barang', [BarangController::class, 'index']);
 
-Route::get('/operasional', [OperasionalController::class, 'index']);
+
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/barang', [BarangController::class, 'index'])->name('barang');
+Route::get('/operasional', [OperasionalController::class, 'index'])->name('operasional'); 
+Route::get('/barang/add', [BarangController::class, 'add']);
+
+
+// hak akses untuk admin
+Route::group(['middleware' => 'directure'], function (){
+    Route::get('/registrasi', [RegistrasiController::class, 'index'])->name('registrasi');
+});
