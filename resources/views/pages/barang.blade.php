@@ -39,6 +39,7 @@
             </ul>
 
         </div>
+
         <!-- Sidebar -->
         <div class="clearfix"></div>
 
