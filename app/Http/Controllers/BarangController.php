@@ -114,4 +114,13 @@ class BarangController extends Controller
 
         return redirect()->route('barang.index');
     }
+
+    public function report()
+    {
+        $reports = Barang::all();
+
+        return view('pages.barang-laporan', [
+            'reports' => $reports
+        ]);
+    }
 }

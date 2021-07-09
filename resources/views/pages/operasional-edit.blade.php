@@ -1,6 +1,6 @@
 @extends('layouts.header')
 
-@section('title', 'Tambah Barang')
+@section('title', 'Edit Operasional')
     
 @section('sidebar')
 

@@ -1,6 +1,6 @@
 @extends('layouts.header')
 
-@section('title', 'Dashboard')
+@section('title', 'Operasional')
 
 @section('sidebar')
 
@@ -13,7 +13,7 @@
             <ul class="metismenu mt-5" id="side-menu">
                 <li class="menu-title">Utama</li>
                 <li>
-                    <a href="/dashboard" class="waves-effect active">
+                    <a href="/dashboard" class="waves-effect">
                         <i class="mdi mdi-view-dashboard"></i><span> Dashboard </span>
                     </a>
                 </li>
@@ -51,7 +51,7 @@
     <!-- Sidebar -left -->
 
 </div>
-<!-- Left Sidebar End -->
+
 @endsection
 
 @section('content')
@@ -64,16 +64,56 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Operasional</h4>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active">
-                                Welcome to Lexa Dashboard
-                            </li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Utama</a></li>
+                            <li class="breadcrumb-item active">Operasional</li>
                         </ol>
                     </div>
                 </div>
             </div>
             <!-- end row -->
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card m-b-20">
+                        <div class="card-body">
+                            
+                            <h4 class="mt-0 header-title">Operasional</h4>
+                            <p class="text-muted m-b-30">
+                                Update terakhir pada tanggal
+                            </p>
+
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th><strong>Tanggal</strong></th>
+                                        <th><strong>Keterangan</strong></th>
+                                        <th><strong>Biaya</strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($reports as $report)
+                                    <tr>
+                                        <td>{{ $report->tanggal}}</td>
+                                        <td>{{ $report->keterangan }}</td>
+                                        <td>{{ $report->biaya }}</td>
+                                    </tr>  
+                                    @empty
+                                    <tr>
+                                        <td colspan="7" class="text-center">
+                                            Data Kosong
+                                        </td>
+                                    </tr>
+                                    @endforelse
+                                    
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
 
         </div> <!-- container-fluid -->
 

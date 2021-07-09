@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/barang" class="waves-effect active"><i class="ion-android-archive"></i><span> Barang </span></a>
+                    <a href="/barang" class="waves-effect"><i class="ion-android-archive"></i><span> Barang </span></a>
                 </li>
                 <li>
                     <a href="/penjualan" class="waves-effect"><i class="mdi mdi-cart"></i><span> Penjualan </span></a>
@@ -33,9 +33,14 @@
                 <li class="menu-title">Laporan</>
 
                 <li>
-                    <a href="#" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Laporan Bulanan </span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Laporan <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="/laporan-barang">Laporan Barang</a></li>
+                        <li><a href="#">Laporan Penjualan</a></li>
+                        <li><a href="#">Laporan Pembelian</a></li>
+                        <li><a href="#">Laporan Operasional</a></li>
+                    </ul>
                 </li>
-
             </ul>
 
         </div>
@@ -78,9 +83,7 @@
                             <p class="text-muted m-b-30">
                                 Update terakhir pada tanggal 13/02/2021
                                 <div class="button-items">
-                                    <a href="{{ route('barang.create') }}">
-                                        <button type="button" class="btn btn-success waves-effect">+ Tambah</button>
-                                    </a>
+                                    
                                 </div>
                             </p>
                             
@@ -91,54 +94,19 @@
                                         <th><strong>Nama Barang</strong></th>
                                         <th><strong>Ukuran</strong></th>
                                         <th><strong>Spesifikasi</strong></th>
-                                        <th><strong>Harga (@Lbr) </strong></th>
+                                        <th><strong>Harga (@Lbr)</strong></th>
                                         <th><strong>Jumlah (Lbr)</strong></th>
-                                        <th><strong>Action</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($barangs as $barang)
+                                    @forelse ($reports as $report)
                                     <tr>
-                                        <td>{{ $barang->keterangan }}</td>
-                                        <td>{{ $barang->nama_barang }}</td>
-                                        <td>{{ $barang->ukuran }}</td>
-                                        <td>{{ $barang->spesifikasi }}</td>
-                                        <td>{{ $barang->harga }}</td>
-                                        <td>{{ $barang->jumlah_lbr }}</td>
-                                        <td>
-                                            <div class="button-items">
-                                                <div class="text-left">
-                                                    <a class="btn btn-primary waves-effect" href="{{ route('barang.edit', $barang->id) }}">Edit</a> 
-                                                    <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#delete">Hapus</button>
-                                                </div>
-                                            </div>
-
-                                            <form  method="post" action="{{ route('barang.destroy', $barang->id) }}">
-
-                                            @csrf
-                                            @method('DELETE')
-                                                {{-- Modal --}}
-                                                <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="delete">
-                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title mt-0">DELETE</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p>Apakah Yakin Menghapus Data Ini ?</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="submit" class="btn btn-danger">Hapus</button>
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>   
-                                                            </div>                                           
-                                                        </div><!-- /.modal-content -->
-                                                    </div><!-- /.modal-dialog -->
-                                                </div><!-- /.modal -->
-
-                                            </form>
-
-                                        </td>
+                                        <td>{{ $report->keterangan }}</td>
+                                        <td>{{ $report->nama_barang }}</td>
+                                        <td>{{ $report->ukuran }}</td>
+                                        <td>{{ $report->spesifikasi }}</td>
+                                        <td>{{ $report->harga }}</td>
+                                        <td>{{ $report->jumlah_lbr }}</td>
                                     </tr>
                                     @empty
                                     <tr>

@@ -8,7 +8,7 @@
         <title>@yield('title')</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/title.png">
 
         <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ url('assets/css/metismenu.min.css') }}" rel="stylesheet" type="text/css">
@@ -28,10 +28,10 @@
                 <div class="topbar-left">
                     <a href="index.html" class="logo">
                         <span>
-                            <img src="assets/images/logo-light.png" alt="" height="18">
+                            <img src="assets/images/sidebar-logo.png" class="mt-3" alt="" height="100">
                         </span>
                         <i>
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <img src="assets/images/title.png" alt="" height="32">
                         </i>
                     </a>
                 </div>

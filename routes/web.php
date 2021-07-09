@@ -20,8 +20,10 @@ use App\Http\Controllers\PenjualanController;
 Route::get('/dashboard', [DashboardController::class, 'index']); 
 
 Route::resource('barang', BarangController::class);
+Route::get('/laporan-barang', [BarangController::class, 'report']);
 
 Route::resource('penjualan', PenjualanController::class);
 
 Route::resource('operasional', OperasionalController::class);
+Route::get('/laporan-operasional', [OperasionalController::class, 'report']);
 

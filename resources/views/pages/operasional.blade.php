@@ -10,7 +10,7 @@
         <!--- Sidemenu -->
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
-            <ul class="metismenu" id="side-menu">
+            <ul class="metismenu mt-5" id="side-menu">
                 <li class="menu-title">Utama</li>
                 <li>
                     <a href="/dashboard" class="waves-effect">
@@ -87,23 +87,23 @@
                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th>Keterangan</th>
-                                        <th>Biaya</th>
-                                        <th>Tanggal</th>
-                                        <th>Action</th>
+                                        <th><strong>Tanggal</strong></th>
+                                        <th><strong>Keterangan</strong></th>
+                                        <th><strong>Biaya</strong></th>
+                                        <th><strong>Action</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($operasionals as $operasional)
                                     <tr>
+                                        <td>{{ $operasional->tanggal }}</td>
                                         <td>{{ $operasional->keterangan }}</td>
                                         <td>{{ $operasional->biaya }}</td>
-                                        <td>{{ $operasional->tanggal}}</td>
                                         <td>
                                             <div class="button-items">
                                                 <div class="text-left">
                                                     <div class="text-left">
-                                                        <a class="btn btn-warning waves-effect" href="{{ route('operasional.edit', $operasional->id) }}">Edit</a> 
+                                                        <a class="btn btn-primary waves-effect" href="{{ route('operasional.edit', $operasional->id) }}">Edit</a> 
                                                         <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#delete">Hapus</button>
                                                     </div>
                                                 </div>
