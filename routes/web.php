@@ -17,7 +17,7 @@ use App\Http\Controllers\PenjualanController;
 |
 */
 
-Route::get('/dashboard', [DashboardController::class, 'index']); 
+Route::get('/', [DashboardController::class, 'index']); 
 
 Route::resource('barang', BarangController::class);
 
@@ -25,3 +25,7 @@ Route::resource('penjualan', PenjualanController::class);
 
 Route::resource('operasional', OperasionalController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
