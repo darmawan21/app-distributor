@@ -1,34 +1,32 @@
-@extends('layouts.header')
-
-@section('title', 'Dashboard')
-
-@section('sidebar')
-
-<div class="left side-menu">
-    <div class="slimscroll-menu" id="remove-scroll">
-
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
+<div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu mt-5" id="side-menu">
                 <li class="menu-title">Utama</li>
-                <li>
-                    <a href="/" class="waves-effect active">
+                
+                <li class="{{ request()->is('/') ? 'active' : ''}}">
+                <a href="/" class="waves-effect ">
                         <i class="mdi mdi-view-dashboard"></i><span> Dashboard </span>
                     </a>
                 </li>
-                <li>
+                @if (auth()->user()->level==1)
+                    <li class="{{ request()->is('/') ? 'active' : ''}}">
+                        <a href="/registrasi" class="waves-effect"><i class="ion-ios7-people"></i><span>Registrasi</span></a>
+                    </li>
+                @else (auth()->user()->level==2)
+                <li class="{{ request()->is('/') ? 'active' : ''}}">
                     <a href="/barang" class="waves-effect"><i class="ion-android-archive"></i><span> Barang </span></a>
                 </li>
-                <li>
+                
+                <li class="{{ request()->is('/') ? 'active' : ''}}">
                     <a href="/penjualan" class="waves-effect"><i class="mdi mdi-cart"></i><span> Penjualan </span></a>
                 </li>
-                <li>
+                <li class="{{ request()->is('/') ? 'active' : ''}}">
                     <a href="#" class="waves-effect"><i class="mdi mdi-cart"></i><span> Pembelian </span></a>
                 </li>
-                <li>
+                <li class="{{ request()->is('/') ? 'active' : ''}}">
                     <a href="/operasional" class="waves-effect"><i class="mdi mdi-truck"></i><span> Operasional </span></a>
                 </li>
+                @endif 
 
                 <li class="menu-title">Laporan</>
 
@@ -41,44 +39,8 @@
                         <li><a href="/laporan-operasional">Laporan Operasional</a></li>
                     </ul>
                 </li>
+                
+
             </ul>
 
-        </div>
-        <!-- Sidebar -->
-        <div class="clearfix"></div>
-
-    </div>
-    <!-- Sidebar -left -->
-
 </div>
-<!-- Left Sidebar End -->
-@endsection
-
-@section('content')
-
-<div class="content-page">
-    <!-- Start content -->
-    <div class="content">
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="page-title-box">
-                        <h4 class="page-title">Dashboard</h4>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active">
-                                Welcome to Lexa Dashboard
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
-
-        </div> <!-- container-fluid -->
-
-    </div> <!-- content -->
-    
-</div>
-
-@endsection

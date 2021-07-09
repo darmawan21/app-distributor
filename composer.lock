@@ -5395,6 +5395,12 @@
                 "laravel",
                 "ui"
             ],
+<<<<<<< HEAD
+=======
+            "support": {
+                "source": "https://github.com/laravel/ui/tree/v3.3.0"
+            },
+>>>>>>> origin
             "time": "2021-05-25T16:45:33+00:00"
         },
         {
